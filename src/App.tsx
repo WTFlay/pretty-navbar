@@ -1,26 +1,57 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
+import { Container, MenuIcon } from "./App.styled";
+import { NavBar } from "./components/NavBar";
+
+export const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <NavBar>
+        <ul>
+          <li className="active">
+            <MenuIcon>
+              <i className="material-icons">home</i>
+              Comptes
+            </MenuIcon>
+            <ul>
+              <li className="active">
+                <div>Julien</div>
+                <div>N **** 1234</div>
+              </li>
+              <li>
+                <div>Compte de cheques</div>
+                <div>N **** 5678</div>
+              </li>
+              <li>
+                <div>Livret A</div>
+                <div>N **** 9876</div>
+              </li>
+              <li>
+                <div>MultiHorizons</div>
+                <div>N **** 0000</div>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <MenuIcon>
+              <i className="material-icons">pie_chart</i>
+              Budget
+            </MenuIcon>
+          </li>
+          <li>
+            <MenuIcon>
+              <i className="material-icons">all_inbox</i>
+              Messages
+            </MenuIcon>
+          </li>
+          <li>
+            <MenuIcon>
+              <i className="material-icons">extension</i>
+              Extensions
+            </MenuIcon>
+          </li>
+        </ul>
+      </NavBar>
+    </Container>
   );
-}
-
-export default App;
+};
